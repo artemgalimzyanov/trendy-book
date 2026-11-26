@@ -30,18 +30,29 @@ def require_env(name: str) -> str:
     return value
 
 
+# The SDK default is a 10-minute timeout with 2 retries; an overloaded model (Gemini 503s
+# can hang for minutes) would stall a CI run for an hour before the fallback provider.
+API_TIMEOUT = 120
+API_RETRIES = 1
+
+
 def openai_client():
     """OpenAI client from OPENAI_API_KEY; imported lazily so tests and dry runs need no key."""
     from openai import OpenAI
 
-    return OpenAI(api_key=require_env("OPENAI_API_KEY"))
+    return OpenAI(api_key=require_env("OPENAI_API_KEY"), timeout=API_TIMEOUT, max_retries=API_RETRIES)
 
 
 def gemini_client():
     """Gemini through its OpenAI-compatible endpoint, so no extra package is needed."""
     from openai import OpenAI
 
-    return OpenAI(api_key=require_env("GEMINI_API_KEY"), base_url=GEMINI_BASE_URL)
+    return OpenAI(
+        api_key=require_env("GEMINI_API_KEY"),
+        base_url=GEMINI_BASE_URL,
+        timeout=API_TIMEOUT,
+        max_retries=API_RETRIES,
+    )
 
 
 def output_dir_for(run_date: str) -> Path:

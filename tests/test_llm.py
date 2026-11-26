@@ -29,6 +29,13 @@ def test_gemini_client_uses_the_openai_compatible_endpoint(monkeypatch):
     assert str(client.base_url) == "https://generativelanguage.googleapis.com/v1beta/openai/"
 
 
+def test_clients_give_up_quickly_so_the_fallback_gets_a_turn(monkeypatch):
+    monkeypatch.setenv("GEMINI_API_KEY", "g-key")
+    monkeypatch.setenv("OPENAI_API_KEY", "o-key")
+    for provider in (llm.gemini_provider(), llm.openai_provider()):
+        assert provider.client.timeout == 120 and provider.client.max_retries == 1
+
+
 def test_chat_json_sends_json_mode_and_parses():
     provider = fake_provider("openai", '{"ok": true}', model="gpt-x")
     assert llm.chat_json(provider, "sys", "user") == {"ok": True}

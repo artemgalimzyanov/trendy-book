@@ -23,6 +23,10 @@ from book import chapter, dates, llm, pipeline, sample, story, trends, words, wr
 from book.config import has_env
 from book.config import DOCS_DIR, output_dir_for
 
+# `run --sandbox` keeps its story and notes here (gitignored, but served by `serve`),
+# so real runs for any date can be tried without touching docs/story.json or data/.
+SANDBOX_DIR = DOCS_DIR / "sandbox"
+
 
 def _split_trends(value: str | None) -> list[str] | None:
     """Comma-separated trends, or semicolon-separated when a trend itself has commas."""
@@ -136,14 +140,20 @@ def cmd_chapter(args) -> int:
 
 
 def cmd_run(args) -> int:
+    paths = {"story_path": SANDBOX_DIR / "story.json", "data_dir": SANDBOX_DIR} if args.sandbox else {}
     result = pipeline.run(
         run_date=args.date,
         trends=_split_trends(args.trends),
         dry_run=args.dry_run,
         force=args.force,
         n=args.n,
+        **paths,
     )
     print(json.dumps(result, indent=2, ensure_ascii=False))
+    if args.sandbox and not args.dry_run:
+        rel = (SANDBOX_DIR / "story.json").relative_to(DOCS_DIR.parent)
+        print(f"\nSandbox: {rel}  (read: main.py show --file {rel})")
+        print(f"Page: main.py serve, then http://localhost:8000/?data=sandbox/story.json&today={result['date']}")
     return 0
 
 
@@ -204,6 +214,8 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--trends", help='skip fetching; use these (comma- or ";"-separated)')
     p.add_argument("--dry-run", action="store_true", help="no paid calls; only output/<date>/ is written")
     p.add_argument("--force", action="store_true", help="redo the day even if it is already written")
+    p.add_argument("--sandbox", action="store_true",
+                   help="real run, but into docs/sandbox/ (gitignored) instead of docs/story.json and data/")
     p.set_defaults(func=cmd_run)
 
     p = sub.add_parser("sample", help="write offline sample data to docs/story.sample.json")
