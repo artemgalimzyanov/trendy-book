@@ -1,0 +1,79 @@
+name: Daily Trendy Book sentence
+
+on:
+  schedule:
+    - cron: "0 6 * * *"    # 06:00 UTC: the day's run
+    - cron: "0 12 * * *"   # retry slots: they do nothing if the day is already written
+    - cron: "0 17 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (no paid API calls, story untouched)"
+        type: boolean
+        default: false
+      date:
+        description: "Date to write, YYYY-MM-DD in UTC (empty = today)"
+        type: string
+        required: false
+      trends:
+        description: 'Trends instead of fetching, comma- or ";"-separated (needed to fill a past day)'
+        type: string
+        required: false
+
+permissions:
+  contents: write   # needed to commit docs/story.json and data/notes*.md
+
+concurrency:
+  group: trendy-book-daily
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Write the sentence
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          RUN_DATE: ${{ inputs.date }}
+          TRENDS: ${{ inputs.trends }}
+        run: |
+          args=()
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          if [ -n "$RUN_DATE" ]; then args+=(--date "$RUN_DATE"); fi
+          if [ -n "$TRENDS" ]; then args+=(--trends "$TRENDS"); fi
+          python main.py run "${args[@]}"
+
+      - name: Commit the story
+        if: ${{ inputs.dry_run != true }}
+        env:
+          RUN_DATE: ${{ inputs.date }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/story.json data
+          if git diff --cached --quiet; then
+            echo "story.json and notes unchanged"
+          else
+            git commit -m "story: ${RUN_DATE:-$(date -u +%F)}"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push
+          fi
+
+      - name: Upload output
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: trendy-book-output-${{ github.run_id }}
+          path: output/
+          if-no-files-found: ignore

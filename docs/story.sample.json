@@ -1,0 +1,1501 @@
+{
+  "title": "Working Title",
+  "start": "2027-01-01",
+  "end": "2027-12-31",
+  "chapters": [
+    {
+      "number": 1,
+      "month": "2027-01",
+      "title": "The Ferry in Winter",
+      "summary": "Mara, a night-shift nursing student, and her uncle Teodor, a ferry mechanic, shared a cold flat above the harbour while the news arrived in fragments through radios and phone screens. Ines, their neighbour, kept the building together with tea and stories. A stranger on the morning ferry began to appear too often, always reading, always leaving the paper behind. By the end of January Mara had started keeping the papers, and Teodor had stopped asking why."
+    },
+    {
+      "number": 2,
+      "month": "2027-02",
+      "title": "Rent and Weather",
+      "summary": "February brought a rent rise that Teodor could not cover and a storm that kept the ferries in port for a week. Mara took extra shifts and found a name written in the margin of one of the stranger's newspapers. Ines fell ill and recovered, though she now forgot the endings of her stories. On the last night of the month, Mara followed the stranger off the ferry and lost him in the fog behind the fish market, holding a key that was not hers."
+    }
+  ],
+  "days": [
+    {
+      "date": "2027-01-01",
+      "chapter": 1,
+      "trends": [
+        "Central bank holds interest rates",
+        "Grain corridor deal extended",
+        "Bird flu found on farms",
+        "Housing prices fall sharply",
+        "Storm surge floods harbour"
+      ],
+      "keywords": [
+        "interest",
+        "Grain",
+        "flu",
+        "Housing",
+        "harbour"
+      ],
+      "sentence": "Mara left the clinic after midnight, the interest story still on her phone, and on the tram she heard two men argue about the grain, the flu and the housing until her stop, where the harbour posters had faded.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-02",
+      "chapter": 1,
+      "trends": [
+        "Wildfire smoke reaches capital",
+        "Power grid blackout hits millions",
+        "Football final ends in penalties",
+        "Border crossing reopens",
+        "Heat pump subsidy scrapped"
+      ],
+      "keywords": [
+        "smoke",
+        "blackout",
+        "penalties",
+        "Border",
+        "subsidy"
+      ],
+      "sentence": "Nobody at the harbour mentioned the smoke or the blackout, but Mara noticed how the old men went quiet when the screen above the bar showed the penalties, then the border, then the subsidy.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-03",
+      "chapter": 1,
+      "trends": [
+        "Ceasefire talks resume",
+        "Drought threatens coffee harvest",
+        "New antibiotic approved",
+        "Ancient shipwreck discovered",
+        "Flood warnings across river delta"
+      ],
+      "keywords": [
+        "Ceasefire",
+        "coffee",
+        "antibiotic",
+        "shipwreck",
+        "Flood"
+      ],
+      "sentence": "Mara counted the hours of her night shift by the bulletins: the ceasefire at ten, the coffee at eleven, the antibiotic at midnight, the shipwreck at one, and the flood just before dawn.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-04",
+      "chapter": 1,
+      "trends": [
+        "Space station crew returns",
+        "Train derailment injures dozens",
+        "Diplomats expelled in spy row",
+        "Ferry strike halts crossings",
+        "Teachers march over pay"
+      ],
+      "keywords": [
+        "crew",
+        "Train",
+        "spy",
+        "strike",
+        "Teachers"
+      ],
+      "sentence": "The landlord raised the rent and blamed the crew, the train and the spy, and Teodor, who had heard it all before, blamed the strike and then, quietly, the teachers.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-05",
+      "chapter": 1,
+      "trends": [
+        "Fishing quota dispute escalates",
+        "Monsoon arrives early",
+        "Chip export ban talks",
+        "Volcano eruption grounds flights",
+        "Lithium mine protest grows"
+      ],
+      "keywords": [
+        "quota",
+        "Monsoon",
+        "Chip",
+        "Volcano",
+        "Lithium"
+      ],
+      "sentence": "In the kitchen Ines spread the newspaper over the table, so the quota and the monsoon soaked up the spilled tea, and the chip, the volcano and the lithium were folded away with the bread.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-06",
+      "chapter": 1,
+      "trends": [
+        "Students protest exam reform",
+        "Marathon world record falls",
+        "Museum returns looted bronzes",
+        "Shipping lane piracy rises",
+        "Census shows shrinking villages"
+      ],
+      "keywords": [
+        "exam",
+        "Marathon",
+        "bronzes",
+        "piracy",
+        "villages"
+      ],
+      "sentence": "Teodor wrote Mara a letter he never sent, about the exam and the marathon, about the bronzes he remembered from boyhood, and about how the piracy and the villages made everything feel temporary.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-07",
+      "chapter": 1,
+      "trends": [
+        "Arctic heatwave breaks records",
+        "Election recount ordered",
+        "Rare comet visible tonight",
+        "Glacier collapse blocks valley",
+        "Opera house reopens after fire"
+      ],
+      "keywords": [
+        "Arctic",
+        "recount",
+        "comet",
+        "Glacier",
+        "Opera"
+      ],
+      "sentence": "On the ferry Mara watched a stranger read about the Arctic, fold the paper at the recount, frown at the comet, and leave it on the seat, open at the glacier and the opera.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-08",
+      "chapter": 1,
+      "trends": [
+        "Grain corridor deal extended",
+        "Bird flu found on farms",
+        "Housing prices fall sharply",
+        "Storm surge floods harbour",
+        "Snowstorm strands drivers on motorway"
+      ],
+      "keywords": [
+        "Grain",
+        "flu",
+        "Housing",
+        "harbour",
+        "Snowstorm"
+      ],
+      "sentence": "Teodor fixed the ferry engine by lamplight while the radio drifted from the grain to the flu, and he thought of his sister, of the housing, of the harbour and, for no reason at all, of the snowstorm.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-09",
+      "chapter": 1,
+      "trends": [
+        "Power grid blackout hits millions",
+        "Football final ends in penalties",
+        "Border crossing reopens",
+        "Heat pump subsidy scrapped",
+        "Satellite launch delayed again"
+      ],
+      "keywords": [
+        "blackout",
+        "penalties",
+        "Border",
+        "subsidy",
+        "Satellite"
+      ],
+      "sentence": "That evening the three of them ate on the balcony and said nothing about the blackout, the penalties, the border or the subsidy, though the satellite glowed on every screen across the street.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-10",
+      "chapter": 1,
+      "trends": [
+        "Drought threatens coffee harvest",
+        "New antibiotic approved",
+        "Ancient shipwreck discovered",
+        "Flood warnings across river delta",
+        "Coral reef bleaching spreads"
+      ],
+      "keywords": [
+        "coffee",
+        "antibiotic",
+        "shipwreck",
+        "Flood",
+        "Coral"
+      ],
+      "sentence": "Ines told the neighbour's children a story in which the coffee, the antibiotic and the shipwreck were only the names of streets, and the flood and the coral were two dogs who never learned to sit.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-11",
+      "chapter": 1,
+      "trends": [
+        "Train derailment injures dozens",
+        "Diplomats expelled in spy row",
+        "Ferry strike halts crossings",
+        "Teachers march over pay",
+        "Earthquake shakes coastal towns"
+      ],
+      "keywords": [
+        "Train",
+        "spy",
+        "strike",
+        "Teachers",
+        "Earthquake"
+      ],
+      "sentence": "Mara left the clinic after midnight, the train story still on her phone, and on the tram she heard two men argue about the spy, the strike and the teachers until her stop, where the earthquake posters had faded.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-12",
+      "chapter": 1,
+      "trends": [
+        "Monsoon arrives early",
+        "Chip export ban talks",
+        "Volcano eruption grounds flights",
+        "Lithium mine protest grows",
+        "Bank merger blocked by regulators"
+      ],
+      "keywords": [
+        "Monsoon",
+        "Chip",
+        "Volcano",
+        "Lithium",
+        "merger"
+      ],
+      "sentence": "Nobody at the harbour mentioned the monsoon or the chip, but Mara noticed how the old men went quiet when the screen above the bar showed the volcano, then the lithium, then the merger.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-13",
+      "chapter": 1,
+      "trends": [
+        "Marathon world record falls",
+        "Museum returns looted bronzes",
+        "Shipping lane piracy rises",
+        "Census shows shrinking villages",
+        "Refinery fire sends oil higher"
+      ],
+      "keywords": [
+        "Marathon",
+        "bronzes",
+        "piracy",
+        "villages",
+        "oil"
+      ],
+      "sentence": "Mara counted the hours of her night shift by the bulletins: the marathon at ten, the bronzes at eleven, the piracy at midnight, the villages at one, and the oil just before dawn.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-14",
+      "chapter": 1,
+      "trends": [
+        "Election recount ordered",
+        "Rare comet visible tonight",
+        "Glacier collapse blocks valley",
+        "Opera house reopens after fire",
+        "Central bank holds interest rates"
+      ],
+      "keywords": [
+        "recount",
+        "comet",
+        "Glacier",
+        "Opera",
+        "interest"
+      ],
+      "sentence": "The landlord raised the rent and blamed the recount, the comet and the glacier, and Teodor, who had heard it all before, blamed the opera and then, quietly, the interest.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-15",
+      "chapter": 1,
+      "trends": [
+        "Bird flu found on farms",
+        "Housing prices fall sharply",
+        "Storm surge floods harbour",
+        "Snowstorm strands drivers on motorway",
+        "Wildfire smoke reaches capital"
+      ],
+      "keywords": [
+        "flu",
+        "Housing",
+        "harbour",
+        "Snowstorm",
+        "smoke"
+      ],
+      "sentence": "In the kitchen Ines spread the newspaper over the table, so the flu and the housing soaked up the spilled tea, and the harbour, the snowstorm and the smoke were folded away with the bread.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-16",
+      "chapter": 1,
+      "trends": [
+        "Football final ends in penalties",
+        "Border crossing reopens",
+        "Heat pump subsidy scrapped",
+        "Satellite launch delayed again",
+        "Ceasefire talks resume"
+      ],
+      "keywords": [
+        "penalties",
+        "Border",
+        "subsidy",
+        "Satellite",
+        "Ceasefire"
+      ],
+      "sentence": "Teodor wrote Mara a letter he never sent, about the penalties and the border, about the subsidy he remembered from boyhood, and about how the satellite and the ceasefire made everything feel temporary.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-17",
+      "chapter": 1,
+      "trends": [
+        "New antibiotic approved",
+        "Ancient shipwreck discovered",
+        "Flood warnings across river delta",
+        "Coral reef bleaching spreads",
+        "Space station crew returns"
+      ],
+      "keywords": [
+        "antibiotic",
+        "shipwreck",
+        "Flood",
+        "Coral",
+        "crew"
+      ],
+      "sentence": "On the ferry Mara watched a stranger read about the antibiotic, fold the paper at the shipwreck, frown at the flood, and leave it on the seat, open at the coral and the crew.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-18",
+      "chapter": 1,
+      "trends": [
+        "Diplomats expelled in spy row",
+        "Ferry strike halts crossings",
+        "Teachers march over pay",
+        "Earthquake shakes coastal towns",
+        "Fishing quota dispute escalates"
+      ],
+      "keywords": [
+        "spy",
+        "strike",
+        "Teachers",
+        "Earthquake",
+        "quota"
+      ],
+      "sentence": "Teodor fixed the ferry engine by lamplight while the radio drifted from the spy to the strike, and he thought of his sister, of the teachers, of the earthquake and, for no reason at all, of the quota.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-19",
+      "chapter": 1,
+      "trends": [
+        "Chip export ban talks",
+        "Volcano eruption grounds flights",
+        "Lithium mine protest grows",
+        "Bank merger blocked by regulators",
+        "Students protest exam reform"
+      ],
+      "keywords": [
+        "Chip",
+        "Volcano",
+        "Lithium",
+        "merger",
+        "exam"
+      ],
+      "sentence": "That evening the three of them ate on the balcony and said nothing about the chip, the volcano, the lithium or the merger, though the exam glowed on every screen across the street.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-20",
+      "chapter": 1,
+      "trends": [
+        "Museum returns looted bronzes",
+        "Shipping lane piracy rises",
+        "Census shows shrinking villages",
+        "Refinery fire sends oil higher",
+        "Arctic heatwave breaks records"
+      ],
+      "keywords": [
+        "bronzes",
+        "piracy",
+        "villages",
+        "oil",
+        "Arctic"
+      ],
+      "sentence": "Ines told the neighbour's children a story in which the bronzes, the piracy and the villages were only the names of streets, and the oil and the Arctic were two dogs who never learned to sit.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-21",
+      "chapter": 1,
+      "trends": [
+        "Rare comet visible tonight",
+        "Glacier collapse blocks valley",
+        "Opera house reopens after fire",
+        "Central bank holds interest rates",
+        "Grain corridor deal extended"
+      ],
+      "keywords": [
+        "comet",
+        "Glacier",
+        "Opera",
+        "interest",
+        "Grain"
+      ],
+      "sentence": "Mara left the clinic after midnight, the comet story still on her phone, and on the tram she heard two men argue about the glacier, the opera and the interest until her stop, where the grain posters had faded.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-22",
+      "chapter": 1,
+      "trends": [
+        "Housing prices fall sharply",
+        "Storm surge floods harbour",
+        "Snowstorm strands drivers on motorway",
+        "Wildfire smoke reaches capital",
+        "Power grid blackout hits millions"
+      ],
+      "keywords": [
+        "Housing",
+        "harbour",
+        "Snowstorm",
+        "smoke",
+        "blackout"
+      ],
+      "sentence": "Nobody at the harbour mentioned the housing or the harbour, but Mara noticed how the old men went quiet when the screen above the bar showed the snowstorm, then the smoke, then the blackout.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-23",
+      "chapter": 1,
+      "trends": [
+        "Border crossing reopens",
+        "Heat pump subsidy scrapped",
+        "Satellite launch delayed again",
+        "Ceasefire talks resume",
+        "Drought threatens coffee harvest"
+      ],
+      "keywords": [
+        "Border",
+        "subsidy",
+        "Satellite",
+        "Ceasefire",
+        "coffee"
+      ],
+      "sentence": "Mara counted the hours of her night shift by the bulletins: the border at ten, the subsidy at eleven, the satellite at midnight, the ceasefire at one, and the coffee just before dawn.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-24",
+      "chapter": 1,
+      "trends": [
+        "Ancient shipwreck discovered",
+        "Flood warnings across river delta",
+        "Coral reef bleaching spreads",
+        "Space station crew returns",
+        "Train derailment injures dozens"
+      ],
+      "keywords": [
+        "shipwreck",
+        "Flood",
+        "Coral",
+        "crew",
+        "Train"
+      ],
+      "sentence": "The landlord raised the rent and blamed the shipwreck, the flood and the coral, and Teodor, who had heard it all before, blamed the crew and then, quietly, the train.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-25",
+      "chapter": 1,
+      "trends": [
+        "Ferry strike halts crossings",
+        "Teachers march over pay",
+        "Earthquake shakes coastal towns",
+        "Fishing quota dispute escalates",
+        "Monsoon arrives early"
+      ],
+      "keywords": [
+        "strike",
+        "Teachers",
+        "Earthquake",
+        "quota",
+        "Monsoon"
+      ],
+      "sentence": "In the kitchen Ines spread the newspaper over the table, so the strike and the teachers soaked up the spilled tea, and the earthquake, the quota and the monsoon were folded away with the bread.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-26",
+      "chapter": 1,
+      "trends": [
+        "Volcano eruption grounds flights",
+        "Lithium mine protest grows",
+        "Bank merger blocked by regulators",
+        "Students protest exam reform",
+        "Marathon world record falls"
+      ],
+      "keywords": [
+        "Volcano",
+        "Lithium",
+        "merger",
+        "exam",
+        "Marathon"
+      ],
+      "sentence": "Teodor wrote Mara a letter he never sent, about the volcano and the lithium, about the merger he remembered from boyhood, and about how the exam and the marathon made everything feel temporary.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-27",
+      "chapter": 1,
+      "trends": [
+        "Shipping lane piracy rises",
+        "Census shows shrinking villages",
+        "Refinery fire sends oil higher",
+        "Arctic heatwave breaks records",
+        "Election recount ordered"
+      ],
+      "keywords": [
+        "piracy",
+        "villages",
+        "oil",
+        "Arctic",
+        "recount"
+      ],
+      "sentence": "On the ferry Mara watched a stranger read about the piracy, fold the paper at the villages, frown at the oil, and leave it on the seat, open at the Arctic and the recount.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-28",
+      "chapter": 1,
+      "trends": [
+        "Glacier collapse blocks valley",
+        "Opera house reopens after fire",
+        "Central bank holds interest rates",
+        "Grain corridor deal extended",
+        "Bird flu found on farms"
+      ],
+      "keywords": [
+        "Glacier",
+        "Opera",
+        "interest",
+        "Grain",
+        "flu"
+      ],
+      "sentence": "Teodor fixed the ferry engine by lamplight while the radio drifted from the glacier to the opera, and he thought of his sister, of the interest, of the grain and, for no reason at all, of the flu.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-29",
+      "chapter": 1,
+      "trends": [
+        "Storm surge floods harbour",
+        "Snowstorm strands drivers on motorway",
+        "Wildfire smoke reaches capital",
+        "Power grid blackout hits millions",
+        "Football final ends in penalties"
+      ],
+      "keywords": [
+        "harbour",
+        "Snowstorm",
+        "smoke",
+        "blackout",
+        "penalties"
+      ],
+      "sentence": "That evening the three of them ate on the balcony and said nothing about the harbour, the snowstorm, the smoke or the blackout, though the penalties glowed on every screen across the street.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-30",
+      "chapter": 1,
+      "trends": [
+        "Heat pump subsidy scrapped",
+        "Satellite launch delayed again",
+        "Ceasefire talks resume",
+        "Drought threatens coffee harvest",
+        "New antibiotic approved"
+      ],
+      "keywords": [
+        "subsidy",
+        "Satellite",
+        "Ceasefire",
+        "coffee",
+        "antibiotic"
+      ],
+      "sentence": "Ines told the neighbour's children a story in which the subsidy, the satellite and the ceasefire were only the names of streets, and the coffee and the antibiotic were two dogs who never learned to sit.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-01-31",
+      "chapter": 1,
+      "trends": [
+        "Flood warnings across river delta",
+        "Coral reef bleaching spreads",
+        "Space station crew returns",
+        "Train derailment injures dozens",
+        "Diplomats expelled in spy row"
+      ],
+      "keywords": [
+        "Flood",
+        "Coral",
+        "crew",
+        "Train",
+        "spy"
+      ],
+      "sentence": "Mara left the clinic after midnight, the flood story still on her phone, and on the tram she heard two men argue about the coral, the crew and the train until her stop, where the spy posters had faded.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-01",
+      "chapter": 2,
+      "trends": [
+        "Teachers march over pay",
+        "Earthquake shakes coastal towns",
+        "Fishing quota dispute escalates",
+        "Monsoon arrives early",
+        "Chip export ban talks"
+      ],
+      "keywords": [
+        "Teachers",
+        "Earthquake",
+        "quota",
+        "Monsoon",
+        "Chip"
+      ],
+      "sentence": "Nobody at the harbour mentioned the teachers or the earthquake, but Mara noticed how the old men went quiet when the screen above the bar showed the quota, then the monsoon, then the chip.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-02",
+      "chapter": 2,
+      "trends": [
+        "Lithium mine protest grows",
+        "Bank merger blocked by regulators",
+        "Students protest exam reform",
+        "Marathon world record falls",
+        "Museum returns looted bronzes"
+      ],
+      "keywords": [
+        "Lithium",
+        "merger",
+        "exam",
+        "Marathon",
+        "bronzes"
+      ],
+      "sentence": "Mara counted the hours of her night shift by the bulletins: the lithium at ten, the merger at eleven, the exam at midnight, the marathon at one, and the bronzes just before dawn.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-03",
+      "chapter": 2,
+      "trends": [
+        "Census shows shrinking villages",
+        "Refinery fire sends oil higher",
+        "Arctic heatwave breaks records",
+        "Election recount ordered",
+        "Rare comet visible tonight"
+      ],
+      "keywords": [
+        "villages",
+        "oil",
+        "Arctic",
+        "recount",
+        "comet"
+      ],
+      "sentence": "The landlord raised the rent and blamed the villages, the oil and the Arctic, and Teodor, who had heard it all before, blamed the recount and then, quietly, the comet.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-04",
+      "chapter": 2,
+      "trends": [
+        "Opera house reopens after fire",
+        "Central bank holds interest rates",
+        "Grain corridor deal extended",
+        "Bird flu found on farms",
+        "Housing prices fall sharply"
+      ],
+      "keywords": [
+        "Opera",
+        "interest",
+        "Grain",
+        "flu",
+        "Housing"
+      ],
+      "sentence": "In the kitchen Ines spread the newspaper over the table, so the opera and the interest soaked up the spilled tea, and the grain, the flu and the housing were folded away with the bread.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-05",
+      "chapter": 2,
+      "trends": [
+        "Snowstorm strands drivers on motorway",
+        "Wildfire smoke reaches capital",
+        "Power grid blackout hits millions",
+        "Football final ends in penalties",
+        "Border crossing reopens"
+      ],
+      "keywords": [
+        "Snowstorm",
+        "smoke",
+        "blackout",
+        "penalties",
+        "Border"
+      ],
+      "sentence": "Teodor wrote Mara a letter he never sent, about the snowstorm and the smoke, about the blackout he remembered from boyhood, and about how the penalties and the border made everything feel temporary.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-06",
+      "chapter": 2,
+      "trends": [
+        "Satellite launch delayed again",
+        "Ceasefire talks resume",
+        "Drought threatens coffee harvest",
+        "New antibiotic approved",
+        "Ancient shipwreck discovered"
+      ],
+      "keywords": [
+        "Satellite",
+        "Ceasefire",
+        "coffee",
+        "antibiotic",
+        "shipwreck"
+      ],
+      "sentence": "On the ferry Mara watched a stranger read about the satellite, fold the paper at the ceasefire, frown at the coffee, and leave it on the seat, open at the antibiotic and the shipwreck.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-07",
+      "chapter": 2,
+      "trends": [
+        "Coral reef bleaching spreads",
+        "Space station crew returns",
+        "Train derailment injures dozens",
+        "Diplomats expelled in spy row",
+        "Ferry strike halts crossings"
+      ],
+      "keywords": [
+        "Coral",
+        "crew",
+        "Train",
+        "spy",
+        "strike"
+      ],
+      "sentence": "Teodor fixed the ferry engine by lamplight while the radio drifted from the coral to the crew, and he thought of his sister, of the train, of the spy and, for no reason at all, of the strike.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-08",
+      "chapter": 2,
+      "trends": [
+        "Earthquake shakes coastal towns",
+        "Fishing quota dispute escalates",
+        "Monsoon arrives early",
+        "Chip export ban talks",
+        "Volcano eruption grounds flights"
+      ],
+      "keywords": [
+        "Earthquake",
+        "quota",
+        "Monsoon",
+        "Chip",
+        "Volcano"
+      ],
+      "sentence": "That evening the three of them ate on the balcony and said nothing about the earthquake, the quota, the monsoon or the chip, though the volcano glowed on every screen across the street.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-09",
+      "chapter": 2,
+      "trends": [
+        "Bank merger blocked by regulators",
+        "Students protest exam reform",
+        "Marathon world record falls",
+        "Museum returns looted bronzes",
+        "Shipping lane piracy rises"
+      ],
+      "keywords": [
+        "merger",
+        "exam",
+        "Marathon",
+        "bronzes",
+        "piracy"
+      ],
+      "sentence": "Ines told the neighbour's children a story in which the merger, the exam and the marathon were only the names of streets, and the bronzes and the piracy were two dogs who never learned to sit.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-10",
+      "chapter": 2,
+      "trends": [
+        "Refinery fire sends oil higher",
+        "Arctic heatwave breaks records",
+        "Election recount ordered",
+        "Rare comet visible tonight",
+        "Glacier collapse blocks valley"
+      ],
+      "keywords": [
+        "oil",
+        "Arctic",
+        "recount",
+        "comet",
+        "Glacier"
+      ],
+      "sentence": "Mara left the clinic after midnight, the oil story still on her phone, and on the tram she heard two men argue about the Arctic, the recount and the comet until her stop, where the glacier posters had faded.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-11",
+      "chapter": 2,
+      "trends": [
+        "Central bank holds interest rates",
+        "Grain corridor deal extended",
+        "Bird flu found on farms",
+        "Housing prices fall sharply",
+        "Storm surge floods harbour"
+      ],
+      "keywords": [
+        "interest",
+        "Grain",
+        "flu",
+        "Housing",
+        "harbour"
+      ],
+      "sentence": "Nobody at the harbour mentioned the interest or the grain, but Mara noticed how the old men went quiet when the screen above the bar showed the flu, then the housing, then the harbour.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-12",
+      "chapter": 2,
+      "trends": [
+        "Wildfire smoke reaches capital",
+        "Power grid blackout hits millions",
+        "Football final ends in penalties",
+        "Border crossing reopens",
+        "Heat pump subsidy scrapped"
+      ],
+      "keywords": [
+        "smoke",
+        "blackout",
+        "penalties",
+        "Border",
+        "subsidy"
+      ],
+      "sentence": "Mara counted the hours of her night shift by the bulletins: the smoke at ten, the blackout at eleven, the penalties at midnight, the border at one, and the subsidy just before dawn.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-13",
+      "chapter": 2,
+      "trends": [
+        "Ceasefire talks resume",
+        "Drought threatens coffee harvest",
+        "New antibiotic approved",
+        "Ancient shipwreck discovered",
+        "Flood warnings across river delta"
+      ],
+      "keywords": [
+        "Ceasefire",
+        "coffee",
+        "antibiotic",
+        "shipwreck",
+        "Flood"
+      ],
+      "sentence": "The landlord raised the rent and blamed the ceasefire, the coffee and the antibiotic, and Teodor, who had heard it all before, blamed the shipwreck and then, quietly, the flood.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-15",
+      "chapter": 2,
+      "trends": [
+        "Fishing quota dispute escalates",
+        "Monsoon arrives early",
+        "Chip export ban talks",
+        "Volcano eruption grounds flights",
+        "Lithium mine protest grows"
+      ],
+      "keywords": [
+        "quota",
+        "Monsoon",
+        "Chip",
+        "Volcano",
+        "Lithium"
+      ],
+      "sentence": "Teodor wrote Mara a letter he never sent, about the quota and the monsoon, about the chip he remembered from boyhood, and about how the volcano and the lithium made everything feel temporary.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-16",
+      "chapter": 2,
+      "trends": [
+        "Students protest exam reform",
+        "Marathon world record falls",
+        "Museum returns looted bronzes",
+        "Shipping lane piracy rises",
+        "Census shows shrinking villages"
+      ],
+      "keywords": [
+        "exam",
+        "Marathon",
+        "bronzes",
+        "piracy",
+        "villages"
+      ],
+      "sentence": "On the ferry Mara watched a stranger read about the exam, fold the paper at the marathon, frown at the bronzes, and leave it on the seat, open at the piracy and the villages.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-17",
+      "chapter": 2,
+      "trends": [
+        "Arctic heatwave breaks records",
+        "Election recount ordered",
+        "Rare comet visible tonight",
+        "Glacier collapse blocks valley",
+        "Opera house reopens after fire"
+      ],
+      "keywords": [
+        "Arctic",
+        "recount",
+        "comet",
+        "Glacier",
+        "Opera"
+      ],
+      "sentence": "Teodor fixed the ferry engine by lamplight while the radio drifted from the Arctic to the recount, and he thought of his sister, of the comet, of the glacier and, for no reason at all, of the opera.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-18",
+      "chapter": 2,
+      "trends": [
+        "Grain corridor deal extended",
+        "Bird flu found on farms",
+        "Housing prices fall sharply",
+        "Storm surge floods harbour",
+        "Snowstorm strands drivers on motorway"
+      ],
+      "keywords": [
+        "Grain",
+        "flu",
+        "Housing",
+        "harbour",
+        "Snowstorm"
+      ],
+      "sentence": "That evening the three of them ate on the balcony and said nothing about the grain, the flu, the housing or the harbour, though the snowstorm glowed on every screen across the street.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-19",
+      "chapter": 2,
+      "trends": [
+        "Power grid blackout hits millions",
+        "Football final ends in penalties",
+        "Border crossing reopens",
+        "Heat pump subsidy scrapped",
+        "Satellite launch delayed again"
+      ],
+      "keywords": [
+        "blackout",
+        "penalties",
+        "Border",
+        "subsidy",
+        "Satellite"
+      ],
+      "sentence": "Ines told the neighbour's children a story in which the blackout, the penalties and the border were only the names of streets, and the subsidy and the satellite were two dogs who never learned to sit.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-20",
+      "chapter": 2,
+      "trends": [
+        "Drought threatens coffee harvest",
+        "New antibiotic approved",
+        "Ancient shipwreck discovered",
+        "Flood warnings across river delta",
+        "Coral reef bleaching spreads"
+      ],
+      "keywords": [
+        "coffee",
+        "antibiotic",
+        "shipwreck",
+        "Flood",
+        "Coral"
+      ],
+      "sentence": "Mara left the clinic after midnight, the coffee story still on her phone, and on the tram she heard two men argue about the antibiotic, the shipwreck and the flood until her stop, where the coral posters had faded.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-21",
+      "chapter": 2,
+      "trends": [
+        "Train derailment injures dozens",
+        "Diplomats expelled in spy row",
+        "Ferry strike halts crossings",
+        "Teachers march over pay",
+        "Earthquake shakes coastal towns"
+      ],
+      "keywords": [
+        "Train",
+        "spy",
+        "strike",
+        "Teachers",
+        "Earthquake"
+      ],
+      "sentence": "Nobody at the harbour mentioned the train or the spy, but Mara noticed how the old men went quiet when the screen above the bar showed the strike, then the teachers, then the earthquake.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-22",
+      "chapter": 2,
+      "trends": [
+        "Monsoon arrives early",
+        "Chip export ban talks",
+        "Volcano eruption grounds flights",
+        "Lithium mine protest grows",
+        "Bank merger blocked by regulators"
+      ],
+      "keywords": [
+        "Monsoon",
+        "Chip",
+        "Volcano",
+        "Lithium",
+        "merger"
+      ],
+      "sentence": "Mara counted the hours of her night shift by the bulletins: the monsoon at ten, the chip at eleven, the volcano at midnight, the lithium at one, and the merger just before dawn.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-23",
+      "chapter": 2,
+      "trends": [
+        "Marathon world record falls",
+        "Museum returns looted bronzes",
+        "Shipping lane piracy rises",
+        "Census shows shrinking villages",
+        "Refinery fire sends oil higher"
+      ],
+      "keywords": [
+        "Marathon",
+        "bronzes",
+        "piracy",
+        "villages",
+        "oil"
+      ],
+      "sentence": "The landlord raised the rent and blamed the marathon, the bronzes and the piracy, and Teodor, who had heard it all before, blamed the villages and then, quietly, the oil.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-24",
+      "chapter": 2,
+      "trends": [
+        "Election recount ordered",
+        "Rare comet visible tonight",
+        "Glacier collapse blocks valley",
+        "Opera house reopens after fire",
+        "Central bank holds interest rates"
+      ],
+      "keywords": [
+        "recount",
+        "comet",
+        "Glacier",
+        "Opera",
+        "interest"
+      ],
+      "sentence": "In the kitchen Ines spread the newspaper over the table, so the recount and the comet soaked up the spilled tea, and the glacier, the opera and the interest were folded away with the bread.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-25",
+      "chapter": 2,
+      "trends": [
+        "Bird flu found on farms",
+        "Housing prices fall sharply",
+        "Storm surge floods harbour",
+        "Snowstorm strands drivers on motorway",
+        "Wildfire smoke reaches capital"
+      ],
+      "keywords": [
+        "flu",
+        "Housing",
+        "harbour",
+        "Snowstorm",
+        "smoke"
+      ],
+      "sentence": "Teodor wrote Mara a letter he never sent, about the flu and the housing, about the harbour he remembered from boyhood, and about how the snowstorm and the smoke made everything feel temporary.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-26",
+      "chapter": 2,
+      "trends": [
+        "Football final ends in penalties",
+        "Border crossing reopens",
+        "Heat pump subsidy scrapped",
+        "Satellite launch delayed again",
+        "Ceasefire talks resume"
+      ],
+      "keywords": [
+        "penalties",
+        "Border",
+        "subsidy",
+        "Satellite",
+        "Ceasefire"
+      ],
+      "sentence": "On the ferry Mara watched a stranger read about the penalties, fold the paper at the border, frown at the subsidy, and leave it on the seat, open at the satellite and the ceasefire.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-27",
+      "chapter": 2,
+      "trends": [
+        "New antibiotic approved",
+        "Ancient shipwreck discovered",
+        "Flood warnings across river delta",
+        "Coral reef bleaching spreads",
+        "Space station crew returns"
+      ],
+      "keywords": [
+        "antibiotic",
+        "shipwreck",
+        "Flood",
+        "Coral",
+        "crew"
+      ],
+      "sentence": "Teodor fixed the ferry engine by lamplight while the radio drifted from the antibiotic to the shipwreck, and he thought of his sister, of the flood, of the coral and, for no reason at all, of the crew.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-02-28",
+      "chapter": 2,
+      "trends": [
+        "Diplomats expelled in spy row",
+        "Ferry strike halts crossings",
+        "Teachers march over pay",
+        "Earthquake shakes coastal towns",
+        "Fishing quota dispute escalates"
+      ],
+      "keywords": [
+        "spy",
+        "strike",
+        "Teachers",
+        "Earthquake",
+        "quota"
+      ],
+      "sentence": "That evening the three of them ate on the balcony and said nothing about the spy, the strike, the teachers or the earthquake, though the quota glowed on every screen across the street.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-03-01",
+      "chapter": 3,
+      "trends": [
+        "Chip export ban talks",
+        "Volcano eruption grounds flights",
+        "Lithium mine protest grows",
+        "Bank merger blocked by regulators",
+        "Students protest exam reform"
+      ],
+      "keywords": [
+        "Chip",
+        "Volcano",
+        "Lithium",
+        "merger",
+        "exam"
+      ],
+      "sentence": "Ines told the neighbour's children a story in which the chip, the volcano and the lithium were only the names of streets, and the merger and the exam were two dogs who never learned to sit.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-03-02",
+      "chapter": 3,
+      "trends": [
+        "Museum returns looted bronzes",
+        "Shipping lane piracy rises",
+        "Census shows shrinking villages",
+        "Refinery fire sends oil higher",
+        "Arctic heatwave breaks records"
+      ],
+      "keywords": [
+        "bronzes",
+        "piracy",
+        "villages",
+        "oil",
+        "Arctic"
+      ],
+      "sentence": "Mara left the clinic after midnight, the bronzes story still on her phone, and on the tram she heard two men argue about the piracy, the villages and the oil until her stop, where the Arctic posters had faded.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-03-03",
+      "chapter": 3,
+      "trends": [
+        "Rare comet visible tonight",
+        "Glacier collapse blocks valley",
+        "Opera house reopens after fire",
+        "Central bank holds interest rates",
+        "Grain corridor deal extended"
+      ],
+      "keywords": [
+        "comet",
+        "Glacier",
+        "Opera",
+        "interest",
+        "Grain"
+      ],
+      "sentence": "Nobody at the harbour mentioned the comet or the glacier, but Mara noticed how the old men went quiet when the screen above the bar showed the opera, then the interest, then the grain.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-03-04",
+      "chapter": 3,
+      "trends": [
+        "Housing prices fall sharply",
+        "Storm surge floods harbour",
+        "Snowstorm strands drivers on motorway",
+        "Wildfire smoke reaches capital",
+        "Power grid blackout hits millions"
+      ],
+      "keywords": [
+        "Housing",
+        "harbour",
+        "Snowstorm",
+        "smoke",
+        "blackout"
+      ],
+      "sentence": "Mara counted the hours of her night shift by the bulletins: the housing at ten, the harbour at eleven, the snowstorm at midnight, the smoke at one, and the blackout just before dawn.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-03-05",
+      "chapter": 3,
+      "trends": [
+        "Border crossing reopens",
+        "Heat pump subsidy scrapped",
+        "Satellite launch delayed again",
+        "Ceasefire talks resume",
+        "Drought threatens coffee harvest"
+      ],
+      "keywords": [
+        "Border",
+        "subsidy",
+        "Satellite",
+        "Ceasefire",
+        "coffee"
+      ],
+      "sentence": "The landlord raised the rent and blamed the border, the subsidy and the satellite, and Teodor, who had heard it all before, blamed the ceasefire and then, quietly, the coffee.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-03-06",
+      "chapter": 3,
+      "trends": [
+        "Ancient shipwreck discovered",
+        "Flood warnings across river delta",
+        "Coral reef bleaching spreads",
+        "Space station crew returns",
+        "Train derailment injures dozens"
+      ],
+      "keywords": [
+        "shipwreck",
+        "Flood",
+        "Coral",
+        "crew",
+        "Train"
+      ],
+      "sentence": "In the kitchen Ines spread the newspaper over the table, so the shipwreck and the flood soaked up the spilled tea, and the coral, the crew and the train were folded away with the bread.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-03-07",
+      "chapter": 3,
+      "trends": [
+        "Ferry strike halts crossings",
+        "Teachers march over pay",
+        "Earthquake shakes coastal towns",
+        "Fishing quota dispute escalates",
+        "Monsoon arrives early"
+      ],
+      "keywords": [
+        "strike",
+        "Teachers",
+        "Earthquake",
+        "quota",
+        "Monsoon"
+      ],
+      "sentence": "Teodor wrote Mara a letter he never sent, about the strike and the teachers, about the earthquake he remembered from boyhood, and about how the quota and the monsoon made everything feel temporary.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-03-08",
+      "chapter": 3,
+      "trends": [
+        "Volcano eruption grounds flights",
+        "Lithium mine protest grows",
+        "Bank merger blocked by regulators",
+        "Students protest exam reform",
+        "Marathon world record falls"
+      ],
+      "keywords": [
+        "Volcano",
+        "Lithium",
+        "merger",
+        "exam",
+        "Marathon"
+      ],
+      "sentence": "On the ferry Mara watched a stranger read about the volcano, fold the paper at the lithium, frown at the merger, and leave it on the seat, open at the exam and the marathon.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-03-09",
+      "chapter": 3,
+      "trends": [
+        "Shipping lane piracy rises",
+        "Census shows shrinking villages",
+        "Refinery fire sends oil higher",
+        "Arctic heatwave breaks records",
+        "Election recount ordered"
+      ],
+      "keywords": [
+        "piracy",
+        "villages",
+        "oil",
+        "Arctic",
+        "recount"
+      ],
+      "sentence": "Teodor fixed the ferry engine by lamplight while the radio drifted from the piracy to the villages, and he thought of his sister, of the oil, of the Arctic and, for no reason at all, of the recount.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-03-10",
+      "chapter": 3,
+      "trends": [
+        "Glacier collapse blocks valley",
+        "Opera house reopens after fire",
+        "Central bank holds interest rates",
+        "Grain corridor deal extended",
+        "Bird flu found on farms"
+      ],
+      "keywords": [
+        "Glacier",
+        "Opera",
+        "interest",
+        "Grain",
+        "flu"
+      ],
+      "sentence": "That evening the three of them ate on the balcony and said nothing about the glacier, the opera, the interest or the grain, though the flu glowed on every screen across the street.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-03-11",
+      "chapter": 3,
+      "trends": [
+        "Storm surge floods harbour",
+        "Snowstorm strands drivers on motorway",
+        "Wildfire smoke reaches capital",
+        "Power grid blackout hits millions",
+        "Football final ends in penalties"
+      ],
+      "keywords": [
+        "harbour",
+        "Snowstorm",
+        "smoke",
+        "blackout",
+        "penalties"
+      ],
+      "sentence": "Ines told the neighbour's children a story in which the harbour, the snowstorm and the smoke were only the names of streets, and the blackout and the penalties were two dogs who never learned to sit.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-03-12",
+      "chapter": 3,
+      "trends": [
+        "Heat pump subsidy scrapped",
+        "Satellite launch delayed again",
+        "Ceasefire talks resume",
+        "Drought threatens coffee harvest",
+        "New antibiotic approved"
+      ],
+      "keywords": [
+        "subsidy",
+        "Satellite",
+        "Ceasefire",
+        "coffee",
+        "antibiotic"
+      ],
+      "sentence": "Mara left the clinic after midnight, the subsidy story still on her phone, and on the tram she heard two men argue about the satellite, the ceasefire and the coffee until her stop, where the antibiotic posters had faded.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-03-13",
+      "chapter": 3,
+      "trends": [
+        "Flood warnings across river delta",
+        "Coral reef bleaching spreads",
+        "Space station crew returns",
+        "Train derailment injures dozens",
+        "Diplomats expelled in spy row"
+      ],
+      "keywords": [
+        "Flood",
+        "Coral",
+        "crew",
+        "Train",
+        "spy"
+      ],
+      "sentence": "Nobody at the harbour mentioned the flood or the coral, but Mara noticed how the old men went quiet when the screen above the bar showed the crew, then the train, then the spy.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-03-14",
+      "chapter": 3,
+      "trends": [
+        "Teachers march over pay",
+        "Earthquake shakes coastal towns",
+        "Fishing quota dispute escalates",
+        "Monsoon arrives early",
+        "Chip export ban talks"
+      ],
+      "keywords": [
+        "Teachers",
+        "Earthquake",
+        "quota",
+        "Monsoon",
+        "Chip"
+      ],
+      "sentence": "Mara counted the hours of her night shift by the bulletins: the teachers at ten, the earthquake at eleven, the quota at midnight, the monsoon at one, and the chip just before dawn.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-03-15",
+      "chapter": 3,
+      "trends": [
+        "Lithium mine protest grows",
+        "Bank merger blocked by regulators",
+        "Students protest exam reform",
+        "Marathon world record falls",
+        "Museum returns looted bronzes"
+      ],
+      "keywords": [
+        "Lithium",
+        "merger",
+        "exam",
+        "Marathon",
+        "bronzes"
+      ],
+      "sentence": "The landlord raised the rent and blamed the lithium, the merger and the exam, and Teodor, who had heard it all before, blamed the marathon and then, quietly, the bronzes.",
+      "writer": "sample"
+    },
+    {
+      "date": "2027-03-16",
+      "chapter": 3,
+      "trends": [
+        "Census shows shrinking villages",
+        "Refinery fire sends oil higher",
+        "Arctic heatwave breaks records",
+        "Election recount ordered",
+        "Rare comet visible tonight"
+      ],
+      "keywords": [
+        "villages",
+        "oil",
+        "Arctic",
+        "recount",
+        "comet"
+      ],
+      "sentence": "In the kitchen Ines spread the newspaper over the table, so the villages and the oil soaked up the spilled tea, and the Arctic, the recount and the comet were folded away with the bread.",
+      "writer": "sample"
+    }
+  ]
+}

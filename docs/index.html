@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trendy Book</title>
+<meta name="description" content="A novel written one sentence a day from the world's news, 1 January to 31 December 2027.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#07080d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2307080d'/%3E%3Crect x='3' y='3' width='4' height='10' fill='%2319f0ff'/%3E%3Crect x='9' y='3' width='4' height='10' fill='%23ff4fd0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #07080d;
+    --panel: #0e1019;
+    --line: #1f2333;
+    --ink: #e4e6f0;      /* prose: 16:1 on --bg */
+    --dim: #8f95ad;      /* secondary text: 6.6:1 */
+    --faint: #4a4f66;    /* locked / decorative only */
+    --cyan: #19f0ff;     /* 14:1 */
+    --magenta: #ff4fd0;  /* 6.9:1 */
+    --future: #23273a;
+    --mono: "Share Tech Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    --serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+    --prose-size: 19px;
+    --measure: calc(38 * var(--prose-size));
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--ink);
+    font-family: var(--mono);
+    background:
+      radial-gradient(900px 420px at 15% -160px, rgba(255, 79, 208, .10), transparent 70%),
+      radial-gradient(900px 420px at 90% -120px, rgba(25, 240, 255, .08), transparent 70%),
+      var(--bg);
+  }
+  a { color: var(--cyan); }
+  button { font: inherit; color: inherit; }
+  :focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* scanlines + noise, on top of everything but never in the way */
+  .fx { position: fixed; inset: 0; pointer-events: none; z-index: 40; }
+  .fx::before {
+    content: ""; position: absolute; inset: 0;
+    background: repeating-linear-gradient(to bottom, rgba(255, 255, 255, .028) 0 1px, transparent 1px 3px);
+  }
+  .fx::after {
+    content: ""; position: absolute; inset: 0; opacity: .05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap { width: 100%; max-width: calc(var(--measure) + 32px); margin-inline: auto; padding-inline: 16px; }
+
+  /* --- header ------------------------------------------------------------ */
+  header.top { padding-top: 36px; }
+  .kicker { font-size: 13px; letter-spacing: .14em; color: var(--magenta); text-transform: uppercase; }
+  .kicker span { color: var(--dim); }
+  h1.title {
+    position: relative;
+    margin: 14px 0 6px;
+    font: 400 clamp(30px, 7vw, 54px)/1.05 var(--mono);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+    text-shadow: 0 0 18px rgba(25, 240, 255, .25);
+  }
+  .glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute; inset: 0;
+    pointer-events: none;
+  }
+  .glitch::before { color: var(--magenta); transform: translateX(-2px); clip-path: inset(0 0 100% 0); animation: glitch-a 6s steps(1) infinite; }
+  .glitch::after  { color: var(--cyan);    transform: translateX(2px);  clip-path: inset(100% 0 0 0); animation: glitch-b 6s steps(1) infinite; }
+  @keyframes glitch-a {
+    0%, 88%, 100% { clip-path: inset(0 0 100% 0); transform: translateX(0); }
+    89% { clip-path: inset(10% 0 62% 0); transform: translateX(-4px); }
+    91% { clip-path: inset(58% 0 12% 0); transform: translateX(3px); }
+    93% { clip-path: inset(30% 0 44% 0); transform: translateX(-2px); }
+    95% { clip-path: inset(0 0 100% 0); }
+  }
+  @keyframes glitch-b {
+    0%, 89%, 100% { clip-path: inset(100% 0 0 0); transform: translateX(0); }
+    90% { clip-path: inset(70% 0 6% 0); transform: translateX(4px); }
+    92% { clip-path: inset(18% 0 60% 0); transform: translateX(-3px); }
+    94% { clip-path: inset(100% 0 0 0); }
+  }
+  .meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; color: var(--dim); font-size: 14px; letter-spacing: .06em; }
+  .meta .day { color: var(--cyan); font-size: 22px; letter-spacing: .08em; text-shadow: 0 0 12px rgba(25, 240, 255, .45); }
+  .strip { display: block; width: 100%; height: 18px; margin: 16px 0 6px; }
+  .strip .written { fill: var(--cyan); }
+  .strip .gap { fill: var(--magenta); }
+  .strip .pending { fill: #fff; animation: blink 1s steps(1) infinite; }
+  .strip .future { fill: var(--future); }
+  .legend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 12px; color: var(--dim); letter-spacing: .08em; }
+  .legend i { display: inline-block; width: 8px; height: 8px; margin-right: 6px; vertical-align: 0; }
+
+  /* --- latest sentence ---------------------------------------------------- */
+  .latest { margin: 30px auto 0; }
+  .latest .box { border: 1px solid var(--line); border-left: 2px solid var(--magenta); background: linear-gradient(90deg, rgba(255, 79, 208, .06), transparent 60%); padding: 16px 18px; }
+  .label { font-size: 12px; letter-spacing: .14em; color: var(--magenta); text-transform: uppercase; }
+  .label span { color: var(--dim); white-space: nowrap; }
+  .latest p { margin: 10px 0 0; font: 400 calc(var(--prose-size) + 1px)/1.6 var(--serif); }
+  .cursor { display: inline-block; width: .55em; height: 1.05em; margin-left: 2px; vertical-align: -.15em; background: var(--magenta); box-shadow: 0 0 10px var(--magenta); animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* --- chapter nav -------------------------------------------------------- */
+  nav.chapters { margin-top: 30px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .navhead { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; }
+  .navhead .label { color: var(--dim); }
+  .navrow { display: flex; gap: 6px; padding: 10px 0 12px; overflow-x: auto; scrollbar-width: thin; scroll-snap-type: x proximity; }
+  .month, .whole {
+    flex: 0 0 auto; scroll-snap-align: start;
+    min-width: 0; flex: 1 0 44px; padding: 7px 6px 8px;
+    border: 1px solid var(--line); background: transparent;
+    font-size: 14px; letter-spacing: .1em; cursor: pointer; text-align: center;
+  }
+  .month { color: var(--cyan); }
+  .month .bar { display: block; height: 2px; margin-top: 6px; background: var(--future); }
+  .month .bar b { display: block; height: 100%; background: currentColor; }
+  .month.current { color: var(--magenta); border-color: rgba(255, 79, 208, .6); animation: pulse 2.4s ease-in-out infinite; }
+  .month[disabled] { color: var(--faint); cursor: not-allowed; border-style: dashed; }
+  .month[aria-pressed="true"], .whole[aria-pressed="true"] { background: rgba(25, 240, 255, .1); border-color: var(--cyan); }
+  .month.current[aria-pressed="true"] { background: rgba(255, 79, 208, .12); border-color: var(--magenta); }
+  .whole { flex: 0 0 auto; padding: 6px 10px; font-size: 13px; color: var(--cyan); }
+  .whole[disabled] { color: var(--faint); border-style: dashed; cursor: not-allowed; }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 rgba(255, 79, 208, 0); }
+    50% { box-shadow: 0 0 14px rgba(255, 79, 208, .45), inset 0 0 8px rgba(255, 79, 208, .2); }
+  }
+
+  /* --- chapter text ------------------------------------------------------- */
+  main { padding: 34px 0 20px; min-height: 40vh; }
+  .ch-head { margin: 0; font: 400 15px/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+  .ch-head .num { color: var(--magenta); }
+  .ch-head .name { color: var(--ink); }
+  .ch-head .live { color: var(--magenta); }
+  .ch-sub { margin: 6px 0 0; font-size: 12px; letter-spacing: .14em; color: var(--dim); text-transform: uppercase; }
+  .summary { margin: 18px 0 0; padding-left: 14px; border-left: 1px solid var(--line); color: var(--dim); font: italic 400 16px/1.6 var(--serif); }
+  .prose { margin-top: 26px; font: 400 var(--prose-size)/1.75 var(--serif); }
+  .prose p { margin: 0 0 1.1em; text-indent: 1.5em; hyphens: auto; overflow-wrap: break-word; }
+  .prose p:first-child { text-indent: 0; }
+  .s { border-radius: 2px; cursor: help; transition: background-color .15s; }
+  .s:hover, .s:focus-visible, .s.on { background: rgba(25, 240, 255, .08); }
+  .s:focus-visible { outline-offset: 1px; }
+  mark.kw { background: none; color: var(--cyan); text-shadow: 0 0 8px rgba(25, 240, 255, .55); hyphens: manual; }
+  .gapmark { font: 13px/1 var(--mono); letter-spacing: .08em; color: var(--magenta); white-space: nowrap; cursor: help; opacity: .85; }
+  .await { font: 13px/1 var(--mono); letter-spacing: .08em; color: var(--dim); white-space: nowrap; }
+  .await .cursor { height: .95em; }
+  .empty { color: var(--dim); font: 15px/1.6 var(--mono); letter-spacing: .04em; }
+
+  /* --- whole book --------------------------------------------------------- */
+  .book-title { margin: 0; font: 600 clamp(28px, 6vw, 44px)/1.15 var(--serif); text-align: center; overflow-wrap: anywhere; }
+  .book-sub { margin: 10px 0 0; text-align: center; color: var(--dim); font: italic 16px/1.5 var(--serif); }
+  .book-actions { margin-top: 18px; text-align: center; }
+  .btn { padding: 8px 14px; border: 1px solid var(--cyan); background: transparent; color: var(--cyan); letter-spacing: .12em; cursor: pointer; font-size: 13px; }
+  .btn:hover { background: rgba(25, 240, 255, .1); }
+  .book-chapter { margin-top: 56px; }
+  .book-chapter h2 { margin: 0 0 4px; font: 400 14px/1.4 var(--mono); letter-spacing: .16em; color: var(--magenta); text-align: center; }
+  .book-chapter h3 { margin: 0; font: 600 24px/1.3 var(--serif); text-align: center; }
+  .book-chapter h3.untitled { color: var(--dim); font-weight: 400; font-style: italic; font-size: 18px; }
+  .fin { margin: 56px 0 0; text-align: center; font: 600 18px var(--serif); letter-spacing: .3em; }
+
+  /* --- source signal ------------------------------------------------------ */
+  .signal {
+    position: absolute; z-index: 30;
+    width: min(420px, calc(100vw - 32px));
+    padding: 12px 14px;
+    background: rgba(14, 16, 25, .97);
+    border: 1px solid var(--cyan);
+    box-shadow: 0 0 24px rgba(25, 240, 255, .18), 0 10px 30px rgba(0, 0, 0, .6);
+    font-size: 13px; line-height: 1.5;
+  }
+  .signal[hidden] { display: none; }
+  .signal ol { margin: 8px 0 0; padding-left: 22px; color: var(--ink); }
+  .signal li { margin: 2px 0; }
+  .signal li::marker { color: var(--dim); }
+  .signal .foot { margin-top: 8px; color: var(--dim); font-size: 12px; }
+  .signal mark.kw { text-shadow: none; }
+  @media (max-width: 640px) {
+    .signal { position: fixed; left: 8px !important; right: 8px; bottom: 8px; top: auto !important; width: auto; }
+  }
+
+  /* --- footer ------------------------------------------------------------- */
+  footer { margin-top: 30px; padding: 22px 0 40px; border-top: 1px solid var(--line); color: var(--dim); font-size: 13px; line-height: 1.6; }
+  footer .row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  footer p { margin: 0; max-width: 34em; }
+  .social { display: flex; gap: 14px; }
+  .social a { display: inline-flex; width: 36px; height: 36px; align-items: center; justify-content: center; border: 1px solid var(--line); color: var(--dim); }
+  .social a:hover { color: var(--cyan); border-color: var(--cyan); }
+  .social svg { width: 18px; height: 18px; fill: currentColor; }
+
+  .status { padding: 40px 0; color: var(--dim); font-size: 15px; letter-spacing: .06em; }
+  .status.err { color: var(--magenta); }
+
+  @media (max-width: 640px) {
+    :root { --prose-size: 18px; }
+    header.top { padding-top: 24px; }
+    .meta .day { font-size: 19px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .glitch::before, .glitch::after { animation: none; display: none; }
+    h1.title { text-shadow: -1px 0 rgba(255, 79, 208, .6), 1px 0 rgba(25, 240, 255, .6); }
+    .cursor, .strip .pending { animation: none; }
+    .month.current { animation: none; box-shadow: 0 0 10px rgba(255, 79, 208, .35); }
+    .s { transition: none; }
+  }
+
+  @media print {
+    @page { margin: 22mm 20mm; }
+    :root { --prose-size: 11.5pt; }
+    body { background: #fff; color: #000; font-family: var(--serif); }
+    .fx, header.top, .latest, nav.chapters, footer, .signal, .book-actions, .ch-sub { display: none !important; }
+    main { padding: 0; }
+    .wrap { max-width: none; padding: 0; }
+    mark.kw { color: inherit; text-shadow: none; }
+    .s { background: none !important; }
+    .gapmark, .await { color: #777; font-family: var(--serif); font-style: italic; }
+    .summary, .book-sub, .ch-head, .ch-head .name { color: #333; }
+    .ch-head .num, .book-chapter h2 { color: #000; }
+    .book-title { margin-top: 30vh; font-size: 30pt; }
+    .book-sub { color: #444; }
+    .book-chapter { break-before: page; margin-top: 0; padding-top: 10mm; }
+    .book-chapter h3 { margin-bottom: 8mm; }
+    .prose p { orphans: 3; widows: 3; }
+  }
+</style>
+</head>
+<body>
+<div class="fx" aria-hidden="true"></div>
+
+<header class="top wrap">
+  <div class="kicker">Trendy Book <span>// a novel, one sentence a day, from the world's news</span></div>
+  <h1 class="title glitch" id="title" data-text="Trendy Book">Trendy Book</h1>
+  <div class="meta" id="meta"></div>
+  <svg class="strip" id="strip" preserveAspectRatio="none" role="img" aria-label="Progress"></svg>
+  <div class="legend" aria-hidden="true">
+    <span><i style="background:var(--cyan)"></i>WRITTEN</span>
+    <span><i style="background:var(--magenta)"></i>SIGNAL LOST</span>
+    <span><i style="background:var(--future)"></i>AHEAD</span>
+  </div>
+</header>
+
+<section class="latest wrap" id="latest" hidden></section>
+
+<nav class="chapters wrap" aria-label="Chapters">
+  <div class="navhead"><span class="label">Chapters</span><span id="wholeslot"></span></div>
+  <div class="navrow" id="navrow"></div>
+</nav>
+
+<main class="wrap" id="main"><div class="status">TUNING IN…</div></main>
+
+<div class="signal" id="signal" role="tooltip" hidden></div>
+
+<footer class="wrap">
+  <div class="row">
+    <p>Each sentence is written by an AI model from the five most widely covered world news topics of the day. One word from each topic must appear in it, and glows. Hover or tap a sentence to see its source signal.</p>
+    <nav class="social" aria-label="Links">
+      <a href="https://github.com/artemgalimzyanov/trendy-book" target="_blank" rel="noopener" title="Source code on GitHub" aria-label="Source code on GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      <a href="https://x.com/galimzyanoff" target="_blank" rel="noopener" title="@galimzyanoff on X" aria-label="@galimzyanoff on X">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>
+      </a>
+    </nav>
+  </div>
+</footer>
+
+<noscript><p class="wrap status">This page needs JavaScript to tune in. The raw text is in <a href="story.json">story.json</a>.</p></noscript>
+
+<script>
+(() => {
+  "use strict";
+
+  const MONTHS = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+  const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July",
+                       "August", "September", "October", "November", "December"];
+  const TYPE_MS = 28;  // per character of the latest sentence
+
+  const params = new URLSearchParams(location.search);
+  const DATA_URL = params.get("data") || "story.json";
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const $ = (id) => document.getElementById(id);
+
+  // --- dates (UTC, ISO strings) ---------------------------------------------
+  const toDate = (s) => new Date(s + "T00:00:00Z");
+  const isoOf = (d) => d.toISOString().slice(0, 10);
+  const addDays = (s, n) => { const d = toDate(s); d.setUTCDate(d.getUTCDate() + n); return isoOf(d); };
+  const diffDays = (a, b) => Math.round((toDate(a) - toDate(b)) / 86400000);
+  const monthOf = (s) => Number(s.slice(5, 7));
+  const dayOf = (s) => Number(s.slice(8, 10));
+  const daysInMonth = (year, month) => new Date(Date.UTC(year, month, 0)).getUTCDate();
+  const pad = (n, w = 2) => String(n).padStart(w, "0");
+  const isIso = (s) => /^\d{4}-\d{2}-\d{2}$/.test(s || "");
+
+  function el(tag, cls, text) {
+    const node = document.createElement(tag);
+    if (cls) node.className = cls;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+
+  // --- keywords: same rules as book/words.py (whole word, plural/possessive) --
+  const WORD = "[\\p{L}\\p{N}_]";
+  const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const phrase = (k) => k.trim().split(/\s+/).map(esc).join("\\s+");
+  function kwSource(k) {
+    const forms = [phrase(k)];
+    if (k.length > 2 && /[^aeiou]y$/i.test(k)) forms.push(phrase(k.slice(0, -1)) + "ies");
+    return `(?<!${WORD})(?:${forms.join("|")})(?:['’]s|s['’]|es|s|['’])?(?!${WORD})`;
+  }
+  function segments(text, keywords) {
+    const ks = [...new Set((keywords || []).filter((k) => typeof k === "string" && k.trim()))]
+      .sort((a, b) => b.length - a.length);
+    if (!ks.length) return [{ t: text, kw: false }];
+    const re = new RegExp(ks.map(kwSource).join("|"), "giu");
+    const out = [];
+    let last = 0;
+    for (const m of text.matchAll(re)) {
+      if (m.index > last) out.push({ t: text.slice(last, m.index), kw: false });
+      out.push({ t: m[0], kw: true });
+      last = m.index + m[0].length;
+    }
+    if (last < text.length) out.push({ t: text.slice(last), kw: false });
+    return out;
+  }
+  function fill(node, text, keywords) {
+    for (const seg of segments(text, keywords)) {
+      node.append(seg.kw ? el("mark", "kw", seg.t) : document.createTextNode(seg.t));
+    }
+    return node;
+  }
+
+  // --- state ------------------------------------------------------------------
+  const S = {};
+
+  function prepare(story) {
+    S.story = story;
+    S.start = isIso(story.start) ? story.start : "2027-01-01";
+    S.end = isIso(story.end) ? story.end : "2027-12-31";
+    S.year = Number(S.start.slice(0, 4));
+    S.total = diffDays(S.end, S.start) + 1;
+    // chapter 0 is the rehearsal and never appears on the page
+    S.days = (story.days || []).filter((d) => d && d.chapter >= 1 && isIso(d.date) && d.date >= S.start && d.date <= S.end)
+      .sort((a, b) => (a.date < b.date ? -1 : 1));
+    S.byDate = Object.fromEntries(S.days.map((d) => [d.date, d]));
+    S.chapters = Object.fromEntries((story.chapters || []).filter((c) => c && c.number >= 1).map((c) => [c.number, c]));
+    S.last = S.days[S.days.length - 1] || null;
+
+    const forced = params.get("today");
+    const today = isIso(forced) ? forced : isoOf(new Date());
+    S.today = today;
+    if (today < S.start) S.now = S.last ? S.last.date : null;   // preview data, or not started yet
+    else S.now = today > S.end ? S.end : today;
+    S.complete = Boolean(S.byDate[S.end]) || (today > S.end && S.days.length > 0);
+    S.current = S.now ? monthOf(S.now) : 0;
+  }
+
+  function status(date) {
+    if (S.byDate[date]) return "written";
+    if (!S.now || date > S.now) return "future";
+    return date === S.now && !S.complete ? "pending" : "gap";
+  }
+  const bookDay = (date) => diffDays(date, S.start) + 1;
+
+  // --- header -----------------------------------------------------------------
+  function renderHeader() {
+    const title = (S.story.title || "Untitled").trim();
+    $("title").textContent = title;
+    $("title").dataset.text = title;
+    document.title = title === "Working Title" ? "Trendy Book" : `${title} · Trendy Book`;
+
+    const meta = $("meta");
+    meta.replaceChildren();
+    const written = S.days.length;
+    let gaps = 0;
+    if (S.now) for (let d = S.start; d <= S.now; d = addDays(d, 1)) if (status(d) === "gap") gaps++;
+
+    if (!S.now) {
+      const left = diffDays(S.start, S.today);
+      meta.append(el("span", "day", `DAY 000 / ${S.total}`),
+                  el("span", "", `TRANSMISSION BEGINS ${S.start} // T-${left} ${left === 1 ? "DAY" : "DAYS"}`));
+    } else {
+      meta.append(el("span", "day", S.complete ? `${S.total} / ${S.total} // COMPLETE` : `DAY ${pad(bookDay(S.now), 3)} / ${S.total}`),
+                  el("span", "", S.now),
+                  el("span", "", `${written} ${written === 1 ? "SENTENCE" : "SENTENCES"}`));
+      if (gaps) meta.append(el("span", "", `${gaps} SIGNAL${gaps === 1 ? "" : "S"} LOST`));
+    }
+    renderStrip(written, gaps);
+  }
+
+  function renderStrip(written, gaps) {
+    const NS = "http://www.w3.org/2000/svg";
+    const svg = $("strip");
+    svg.setAttribute("viewBox", `0 0 ${S.total} 12`);
+    svg.setAttribute("aria-label", `${written} of ${S.total} days written` + (gaps ? `, ${gaps} lost` : ""));
+    svg.replaceChildren();
+    for (let i = 0; i < S.total; i++) {
+      const date = addDays(S.start, i);
+      const first = dayOf(date) === 1;
+      const r = document.createElementNS(NS, "rect");
+      r.setAttribute("x", i + 0.14);
+      r.setAttribute("y", first ? 0 : 3);
+      r.setAttribute("width", 0.72);
+      r.setAttribute("height", first ? 12 : 9);
+      r.setAttribute("class", status(date));
+      svg.append(r);
+    }
+  }
+
+  // --- latest sentence, typed out -----------------------------------------------
+  function renderLatest() {
+    const box = $("latest");
+    if (!S.last) { box.hidden = true; return; }
+    const d = S.last;
+    box.hidden = false;
+    box.replaceChildren();
+    const inner = el("div", "box");
+    const label = el("div", "label", "Latest transmission ");
+    label.append(el("span", "", `// day ${pad(bookDay(d.date), 3)} · ${d.date}`));
+    const p = el("p");
+    p.append(el("span", "sr", d.sentence));
+    const shown = el("span");
+    shown.setAttribute("aria-hidden", "true");
+    const cursor = el("span", "cursor");
+    cursor.setAttribute("aria-hidden", "true");
+    p.append(shown, cursor);
+    inner.append(label, p);
+    box.append(inner);
+    bindSignal(shown, d);
+
+    const segs = segments(d.sentence, d.keywords);
+    const nodes = segs.map((s) => (s.kw ? el("mark", "kw") : el("span")));
+    shown.append(...nodes);
+    if (reduceMotion) {
+      segs.forEach((s, i) => { nodes[i].textContent = s.t; });
+      return;
+    }
+    const total = d.sentence.length;
+    const t0 = performance.now() + 500;
+    const step = (now) => {
+      let left = Math.max(0, Math.floor((now - t0) / TYPE_MS));
+      segs.forEach((s, i) => {
+        const n = Math.min(s.t.length, left);
+        nodes[i].textContent = s.t.slice(0, n);
+        left -= n;
+      });
+      if (Math.floor((now - t0) / TYPE_MS) < total) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  // --- chapter nav --------------------------------------------------------------
+  function renderNav() {
+    const row = $("navrow");
+    row.replaceChildren();
+    for (let m = 1; m <= 12; m++) {
+      const btn = el("button", "month");
+      btn.type = "button";
+      btn.dataset.view = `ch-${m}`;
+      const days = daysInMonth(S.year, m);
+      let written = 0;
+      for (let d = 1; d <= days; d++) if (S.byDate[`${S.year}-${pad(m)}-${pad(d)}`]) written++;
+      const locked = !S.now || m > S.current;
+      const closed = Boolean(S.chapters[m]);
+      btn.append(el("span", "", MONTHS[m - 1]));
+      const bar = el("span", "bar");
+      const fillBar = el("b");
+      fillBar.style.width = `${Math.round((written / days) * 100)}%`;
+      bar.append(fillBar);
+      btn.append(bar);
+      let state;
+      if (locked) { btn.disabled = true; state = "locked"; }
+      else if (closed) state = `closed: ${S.chapters[m].title}`;
+      else if (m === S.current && !S.complete) { btn.classList.add("current"); state = "being written now"; }
+      else state = "open";
+      btn.title = `Chapter ${m}, ${MONTH_NAMES[m - 1]} — ${state}`;
+      btn.setAttribute("aria-label", btn.title);
+      btn.addEventListener("click", () => go(`ch-${m}`));
+      row.append(btn);
+    }
+    const whole = el("button", "whole", S.complete ? "THE WHOLE BOOK →" : "READ THE WHOLE BOOK →");
+    whole.type = "button";
+    whole.dataset.view = "book";
+    whole.disabled = !S.days.length;
+    whole.addEventListener("click", () => go("book"));
+    $("wholeslot").replaceChildren(whole);
+  }
+
+  function markNav(view) {
+    for (const btn of [...$("navrow").children, ...$("wholeslot").children]) {
+      const on = btn.dataset.view === view;
+      btn.setAttribute("aria-pressed", String(on));
+      if (on && btn.classList.contains("month")) {
+        const row = $("navrow");
+        const left = btn.offsetLeft - row.offsetLeft - (row.clientWidth - btn.offsetWidth) / 2;
+        row.scrollLeft = Math.max(0, left);
+      }
+    }
+  }
+
+  // --- chapter text ---------------------------------------------------------------
+  function sentenceNode(day) {
+    const span = fill(el("span", "s"), day.sentence, day.keywords);
+    span.tabIndex = 0;
+    bindSignal(span, day);
+    return span;
+  }
+  function gapNode(date) {
+    const span = el("span", "gapmark", "▒ signal lost ▒");
+    span.tabIndex = 0;
+    bindSignal(span, { date, gap: true });
+    return span;
+  }
+  function awaitNode() {
+    const span = el("span", "await", "awaiting today's signal ");
+    const c = el("span", "cursor");
+    c.setAttribute("aria-hidden", "true");
+    span.append(c);
+    return span;
+  }
+
+  // one paragraph per week of the month: days 1-7, 8-14, ...
+  function chapterProse(m) {
+    const prose = el("div", "prose");
+    const days = daysInMonth(S.year, m);
+    let p = null;
+    for (let d = 1; d <= days; d++) {
+      const date = `${S.year}-${pad(m)}-${pad(d)}`;
+      const st = status(date);
+      if (st === "future") break;
+      if ((d - 1) % 7 === 0 || !p) { p = el("p"); prose.append(p); }
+      if (p.childNodes.length) p.append(" ");
+      if (st === "written") p.append(sentenceNode(S.byDate[date]));
+      else if (st === "gap") p.append(gapNode(date));
+      else p.append(awaitNode());
+    }
+    for (const para of [...prose.children]) if (!para.childNodes.length) para.remove();
+    return prose;
+  }
+
+  function renderChapter(m) {
+    const main = $("main");
+    main.replaceChildren();
+    const info = S.chapters[m];
+    const art = el("article");
+    const h = el("h2", "ch-head");
+    h.append(el("span", "num", `Chapter ${pad(m)}`), " // ");
+    if (info) h.append(el("span", "name", info.title));
+    else h.append(el("span", "live", "In progress"));
+    art.append(h);
+
+    const days = daysInMonth(S.year, m);
+    const shown = m < S.current || S.complete ? days : dayOf(S.now);
+    let sub = `${MONTH_NAMES[m - 1]} ${S.year}`;
+    if (!info) sub += ` // day ${shown} of ${days}`;
+    art.append(el("p", "ch-sub", sub));
+    if (info && info.summary) art.append(el("p", "summary", info.summary));
+
+    const prose = chapterProse(m);
+    if (prose.children.length) art.append(prose);
+    else art.append(el("p", "empty", "No sentences yet."));
+    main.append(art);
+  }
+
+  function renderBook() {
+    const main = $("main");
+    main.replaceChildren();
+    const title = (S.story.title || "Untitled").trim();
+    main.append(el("h1", "book-title", title));
+    main.append(el("p", "book-sub",
+      `A novel written one sentence a day from the world's news, ${humanDate(S.start)} to ${humanDate(S.end)}.`));
+    const actions = el("div", "book-actions");
+    const print = el("button", "btn", "SAVE AS PDF");
+    print.type = "button";
+    print.addEventListener("click", () => window.print());
+    actions.append(print);
+    main.append(actions);
+
+    const last = S.complete ? 12 : S.current;
+    for (let m = 1; m <= last; m++) {
+      const sec = el("section", "book-chapter");
+      sec.append(el("h2", "", `CHAPTER ${pad(m)}`));
+      const info = S.chapters[m];
+      sec.append(info ? el("h3", "", info.title) : el("h3", "untitled", "in progress"));
+      const prose = chapterProse(m);
+      if (!prose.children.length) continue;
+      sec.append(prose);
+      main.append(sec);
+    }
+    if (S.complete) main.append(el("p", "fin", "END"));
+  }
+
+  const humanDate = (s) => `${dayOf(s)} ${MONTH_NAMES[monthOf(s) - 1]} ${s.slice(0, 4)}`;
+
+  function renderPrelaunch() {
+    const main = $("main");
+    main.replaceChildren();
+    main.append(el("p", "empty",
+      `The first sentence will be written on ${humanDate(S.start)}, in the 06:00 UTC run. ` +
+      "Every day after that, one more sentence, until the last day of the year."));
+  }
+
+  // --- source signal popover ---------------------------------------------------
+  const sig = $("signal");
+  let pinned = null;
+  const canHover = matchMedia("(hover: hover)").matches;
+
+  function showSignal(target, day) {
+    sig.replaceChildren();
+    const head = el("div", "label", day.gap ? "No signal " : "Source signal ");
+    head.append(el("span", "", `// ${day.date} · day ${pad(bookDay(day.date), 3)}`));
+    sig.append(head);
+    if (day.gap) {
+      sig.append(el("div", "foot", "Nothing was written on this day."));
+    } else {
+      const ol = el("ol");
+      (day.trends || []).forEach((t, i) => ol.append(fill(el("li"), t, [(day.keywords || [])[i]])));
+      sig.append(ol);
+      if (day.writer) sig.append(el("div", "foot", `written by ${day.writer}`));
+    }
+    sig.hidden = false;
+    target.setAttribute("aria-describedby", "signal");
+    if (matchMedia("(max-width: 640px)").matches) return;  // docked at the bottom by CSS
+    const rects = target.getClientRects();
+    const r = rects[rects.length - 1] || target.getBoundingClientRect();
+    const w = sig.offsetWidth, h = sig.offsetHeight;
+    let left = Math.min(Math.max(8, r.left), document.documentElement.clientWidth - w - 8);
+    let top = r.bottom + 8;
+    if (top + h > innerHeight - 8 && r.top - h - 8 > 0) top = r.top - h - 8;
+    sig.style.left = `${left + scrollX}px`;
+    sig.style.top = `${top + scrollY}px`;
+  }
+  function hideSignal(target) {
+    sig.hidden = true;
+    if (target) target.removeAttribute("aria-describedby");
+    document.querySelectorAll(".s.on").forEach((n) => n.classList.remove("on"));
+  }
+  function bindSignal(node, day) {
+    if (canHover) {
+      node.addEventListener("mouseenter", () => { if (!pinned) showSignal(node, day); });
+      node.addEventListener("mouseleave", () => { if (!pinned) hideSignal(node); });
+    }
+    node.addEventListener("focus", () => { if (!pinned) showSignal(node, day); });
+    node.addEventListener("blur", () => { if (!pinned) hideSignal(node); });
+    const toggle = (e) => {
+      e.stopPropagation();
+      if (pinned === node) { pinned = null; hideSignal(node); return; }
+      hideSignal(pinned);
+      pinned = node;
+      node.classList.add("on");
+      showSignal(node, day);
+    };
+    node.addEventListener("click", toggle);
+    node.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(e); } });
+  }
+  document.addEventListener("click", (e) => { if (pinned && !sig.contains(e.target)) { hideSignal(pinned); pinned = null; } });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !sig.hidden) { hideSignal(pinned); pinned = null; } });
+  addEventListener("resize", () => { if (!sig.hidden && !pinned) hideSignal(); });
+
+  // --- views ------------------------------------------------------------------
+  function defaultView() {
+    if (!S.now) return "none";
+    return S.complete ? "book" : `ch-${S.current}`;
+  }
+  function viewFromHash() {
+    const h = location.hash.slice(1);
+    if (h === "book" && S.days.length) return "book";
+    const m = /^ch-(\d{1,2})$/.exec(h);
+    if (m && S.now && Number(m[1]) >= 1 && Number(m[1]) <= (S.complete ? 12 : S.current)) return h;
+    return defaultView();
+  }
+  function go(view) {
+    if (location.hash.slice(1) !== view) history.pushState(null, "", `#${view}`);
+    show(view);
+  }
+  function show(view) {
+    hideSignal(pinned);
+    pinned = null;
+    if (view === "none") renderPrelaunch();
+    else if (view === "book") renderBook();
+    else renderChapter(Number(view.slice(3)));
+    markNav(view);
+  }
+  addEventListener("popstate", () => show(viewFromHash()));
+  addEventListener("hashchange", () => show(viewFromHash()));
+
+  // --- load ---------------------------------------------------------------------
+  fetch(DATA_URL, { cache: "no-cache" })
+    .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+    .then((story) => {
+      prepare(story);
+      renderHeader();
+      renderLatest();
+      renderNav();
+      show(viewFromHash());
+    })
+    .catch((err) => {
+      const main = $("main");
+      main.replaceChildren(el("div", "status err",
+        `NO SIGNAL // could not load ${DATA_URL} (${err.message}). ` +
+        "If you opened this file directly, run: python main.py serve"));
+      $("meta").textContent = "";
+      console.error(err);
+    });
+})();
+</script>
+</body>
+</html>
