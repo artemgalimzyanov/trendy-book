@@ -4,23 +4,29 @@ from book import llm
 from tests.fakes import fake_provider
 
 
-def test_providers_put_gemini_first_when_key_is_set(monkeypatch):
+def test_providers_put_openai_first_and_gemini_second(monkeypatch):
+    monkeypatch.setenv("OPENAI_API_KEY", "o-key")
     monkeypatch.setenv("GEMINI_API_KEY", "g-key")
-    names = [p.name for p in llm.providers()]
-    assert names == ["gemini", "openai"]
-
-
-def test_providers_skip_gemini_without_key(monkeypatch):
-    monkeypatch.delenv("GEMINI_API_KEY", raising=False)
     order = llm.providers()
-    assert [p.name for p in order] == ["openai"]
+    assert [p.name for p in order] == ["openai", "gemini"]
     assert order[0].model == llm.OPENAI_WRITER_MODEL == "gpt-5.4-mini"
 
 
-def test_providers_create_no_client_until_used(monkeypatch):
+def test_providers_skip_a_provider_without_key(monkeypatch):
+    monkeypatch.setenv("OPENAI_API_KEY", "o-key")
+    monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+    assert [p.name for p in llm.providers()] == ["openai"]
+    monkeypatch.delenv("OPENAI_API_KEY")
     monkeypatch.setenv("GEMINI_API_KEY", "g-key")
+    assert [p.name for p in llm.providers()] == ["gemini"]
+
+
+def test_providers_without_any_key_fail_only_when_used(monkeypatch):
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
-    llm.providers()  # must not raise on the missing OpenAI key
+    monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+    order = llm.providers()  # must not raise: dry runs need no key
+    with pytest.raises(RuntimeError):
+        order[0].client
 
 
 def test_gemini_client_uses_the_openai_compatible_endpoint(monkeypatch):

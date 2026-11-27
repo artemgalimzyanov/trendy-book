@@ -57,15 +57,15 @@ def test_retries_after_a_missing_keyword_with_the_problems_listed():
     assert retry[3]["content"].startswith("Fix: the sentence must contain the keyword(s): 'Ebola'")
 
 
-def test_gemini_error_falls_back_to_openai():
-    gemini = fake_provider("gemini", RuntimeError("429 quota"))
-    openai = fake_provider("openai", GOOD, model="gpt-5.4-mini")
+def test_openai_without_credit_falls_back_to_gemini():
+    openai = fake_provider("openai", RuntimeError("429 insufficient_quota"), model="gpt-5.4-mini")
+    gemini = fake_provider("gemini", GOOD, model="gemini-3.8-flash")
 
-    result = writer.write_day(story.empty_story(), "", "2027-01-05", TRENDS, [gemini, openai])
+    result = writer.write_day(story.empty_story(), "", "2027-01-05", TRENDS, [openai, gemini])
 
-    assert result["writer"] == "openai:gpt-5.4-mini"
-    assert len(gemini.client.calls) == 1  # an API error is not retried on the same provider
-    assert result["attempts"][0]["error"] == "RuntimeError: 429 quota"
+    assert result["writer"] == "gemini:gemini-3.8-flash"
+    assert len(openai.client.calls) == 1  # an API error is not retried on the same provider
+    assert result["attempts"][0]["error"] == "RuntimeError: 429 insufficient_quota"
 
 
 def test_bad_json_is_retried_once():

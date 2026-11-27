@@ -1,4 +1,7 @@
-"""Model providers for the writer: Gemini (free tier) first, OpenAI as the fallback.
+"""Model providers for the writer: OpenAI first, Gemini (free tier) when OpenAI fails.
+
+OpenAI keeps one voice for the whole novel; Gemini takes over on any OpenAI error
+(no credit, outage) or when OpenAI's two attempts both fail the check.
 
 Both are reached with the `openai` package: Gemini through its OpenAI-compatible endpoint.
 """
@@ -53,13 +56,15 @@ def openai_provider() -> Provider:
 
 
 def providers() -> list[Provider]:
-    """Provider order for the writer. Gemini is skipped when GEMINI_API_KEY is missing."""
+    """Provider order for the writer: OpenAI, then Gemini. A provider without a key is skipped."""
     order = []
+    if has_env("OPENAI_API_KEY"):
+        order.append(openai_provider())
     if has_env("GEMINI_API_KEY"):
         order.append(gemini_provider())
-    else:
-        log.info("GEMINI_API_KEY not set; writing with OpenAI only")
-    order.append(openai_provider())
+    if not order:
+        log.warning("Neither OPENAI_API_KEY nor GEMINI_API_KEY is set")
+        order.append(openai_provider())  # fails on first use with a clear "missing key" error
     return order
 
 
